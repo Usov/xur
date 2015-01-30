@@ -1,0 +1,35 @@
+<div class="b-create-question__left">
+    <div class="b-create-question__elem">
+        <label for='type'>Тип вопроса:</label>
+        <select id='type'>
+            <option value='simple'>Обычный</option>
+            <!--<option value='other'>Другой</option>-->
+        </select>
+    </div>
+    <div class="b-create-question__elem">
+        <label for='type'>Текст вопроса:</label><br>
+        <textarea id="text" class='b-create-question__elem__textarea' type="text"></textarea>
+    </div>
+    <div class="b-create-question__elem">
+        <label for='explanations'>Пояснения:</label><br>
+        <textarea id="explanations" class='b-create-question__elem__textarea' type="text"></textarea>
+    </div>
+    <div class="b-create-question__elem">
+        <label for='images'>Прикрепить изображения:</label><br>
+        <input id="images" type="file">
+    </div>
+
+    <div class="b-create-question__elem">
+        <label for='signature'>Опубликовать от моего имени</label>
+        <input id="signature" type="checkbox" name='signature'>
+    </div>
+    <div class="b-create-question__elem">
+        <input type="button" value='Отправить'>
+    </div>
+</div>
+<div class="b-create-question__right">
+    <div id='answerContainer' class="b-create-question__answer">
+        <label>Варианты ответов:</label><br>
+        <input class="answer" type="text" name='answers[]'>
+    </div>
+</div>

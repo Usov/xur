@@ -1,0 +1,172 @@
+@font-face {
+    font-family: OpenSans;
+    src: url(/font/app/OpenSans-Regular.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url(/font/app/OpenSans-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url(/font/app/OpenSans-Italic.ttf);
+    font-style: italic;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: OpenSans, sans-serif;
+}
+
+.l-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 800px;
+    height: 690px;
+    margin: 0 auto;
+    background: #0a0e19;
+    color: #fff;
+}
+
+.b-container-user {
+    margin-top: 20px;
+    margin-left: 38px;
+    width: 204px;
+    /*float: left;*/
+}
+
+.b-container-navigation-tile {
+    float: left;
+    width: 100px;
+    margin-top: 20px;
+    margin-left: 38px;
+}
+
+.b-container-tile {
+    float: right;
+    width: 657px;
+    margin-top: 20px;
+}
+
+.b-user {
+    height: 100px;
+    width: 210px;
+    position: relative;
+}
+
+.b-user__info {
+    margin: 0 0 0 5px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.b-user__info__name {
+    font-size: 18px;
+    margin: 0;
+}
+
+.b-user__info__rank {
+    font-size: 16px;
+    margin: 0;
+}
+
+.b-user__avatar {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.b-user__avatar__img {
+    width: 100px;
+}
+
+.b-navigation {
+    float: right;
+    margin-left: 100px;
+    margin-top: 20px;
+    position: absolute;
+    left: 400px;
+    top: 38px;
+}
+
+.b-tile-area {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.b-tile-more {
+    width: 620px;
+    height: 25px;
+    background: #75A9F9;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.b-tile {
+    float: left;
+    background: #A8C6FA;
+    width: 100px;
+    height: 100px;
+    margin: auto 4px 4px auto;
+}
+
+.b-tile-width-double {
+    width: 204px;
+}
+
+.b-tile-height-double {
+    height: 204px;
+}
+
+.b-tile-navigation-area {
+    width: 100px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.b-tile-navigation {
+    background: #75A9F9;
+    width: 100px;
+    height: 100px;
+    margin: auto 4px 4px auto;
+}
+.b-container{
+    margin-left: 36px;
+    margin-top: 20px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+.b-create-question {
+}
+.b-void {
+}
+
+.b-create-question__left {
+    float: left;
+    display: block;
+    width: 420px;
+}
+
+.b-create-question__right {
+    display: block;
+    width: 416px;
+    margin-left: 430px;
+}
+
+.b-create-question__elem {
+    padding-top: 5px;
+}
+
+.b-create-question__elem__textarea {
+    resize: none;
+    width: 400px;
+    height: 100px;
+}
