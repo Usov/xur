@@ -1,13 +1,16 @@
 define(['backbone', 'appState',
-        'screens/index', 'screens/createQuestion',
+        'screens/index', 'screens/createQuestion', 'screens/void',
     ],
-    function (Backbone, AppStateModel, IndexScreen, CreateQuestionScreen) {
+    function (Backbone, AppStateModel,
+              IndexScreen, CreateQuestionScreen, VoidScreen
+        ) {
 
         var AppView = Backbone.View.extend({
             initialize: function () {
                 this.screens = {
                     'index': IndexScreen,
-                    'createQuestion': CreateQuestionScreen
+                    'createQuestion': CreateQuestionScreen,
+                    'void': VoidScreen,
                 };
                 this.model = AppStateModel;
 

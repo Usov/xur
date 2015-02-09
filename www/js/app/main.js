@@ -15,8 +15,11 @@ requirejs.config({
 
 
         router: '/js/app/router',
+        gate: 'gates/vk',
+        status:'models/status',
         appState: 'models/appState',
         widget: '/js/app/views/abstract/simpleWidget',
+
     },
 });
 require(['router', 'views/app', 'backbone'],

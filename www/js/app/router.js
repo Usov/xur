@@ -9,23 +9,27 @@ define(['backbone', 'appState'], function (Backbone, AppStateModel) {
             "void": "void",
         },
         index: function () {
-            console.info('Route.index');
+            console.warn('Route.index');
             AppStateModel.set({screen: 'index'});
         },
 
         game: function () {
-            console.info('Route.game');
+            console.warn('Route.game');
 //            AppStateModel.set({screen:'game'});
         },
         createQuestion: function () {
-            console.info('Route.createQuestion');
+            console.warn('Route.createQuestion');
             AppStateModel.set({screen:'createQuestion'});
         },
+        void: function () {
+            console.warn('Route.createQuestion');
+            AppStateModel.set({screen:'void'});
+        },
         topAuthors: function () {
-            console.info('Route.topAutors');
+            console.warn('Route.topAutors');
         },
         topPlayers: function () {
-            console.info('Route.topPlayers');
+            console.warn('Route.topPlayers');
         }
     });
 

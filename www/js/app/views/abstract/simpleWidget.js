@@ -77,6 +77,56 @@ define(['backbone'], function (Backbone) {
                 }
             }
         },
+
+        associateModel: function (model, attributes) {
+            var obj = {};
+            if (_.isArray(attributes)) {
+                for (var i = 0; i < attributes.length; i++) {
+                    obj[attributes[i]] = attributes[i];
+                }
+            } else {
+                obj = attributes;
+            }
+
+
+            var eventObj={};
+
+            for (var key in obj) {
+                console.warn(key);
+
+                var func =function (m, v, o) {
+                        var _key= _.clone(key);
+                        console.warn('model was changed', _key, m, v, o);
+                        //var html;
+                        //if (key + 'AttrPreparing' in this) {
+                        //    html = this[key + 'AttrPreparing'](model.get(key));
+                        //} else {
+                        //    html = model.get(key);
+                        //}
+                        ////console.warn('[data-model =' + obj[key] + ']', $('[data-model =' + obj[key] + ']').html());
+                        //this.$('[data-model =' + obj[key] + ']').html(html);
+                    };
+                this.listenTo(model, 'change:' + key, func);
+
+
+                //this.listenTo(model, 'change:' + key, function (m, v, o) {
+                //    var _key= _.clone(key);
+                //    console.warn('model was changed', _key, m, v, o);
+                //    var html;
+                //    if (key + 'AttrPreparing' in this) {
+                //        html = this[key + 'AttrPreparing'](model.get(key));
+                //    } else {
+                //        html = model.get(key);
+                //    }
+                //    //console.warn('[data-model =' + obj[key] + ']', $('[data-model =' + obj[key] + ']').html());
+                //    this.$('[data-model =' + obj[key] + ']').html(html);
+                //});
+                //console.warn('key2',key);
+                //console.warn('model', model._events)
+            }
+
+
+        }
     });
 
     return Widget;
