@@ -79,6 +79,7 @@ define(['backbone'], function (Backbone) {
         },
 
         associateModel: function (model, attributes) {
+            var _this = this
             var obj = {};
             if (_.isArray(attributes)) {
                 for (var i = 0; i < attributes.length; i++) {
@@ -89,43 +90,23 @@ define(['backbone'], function (Backbone) {
             }
 
 
-            var eventObj={};
+            var eventObj = {};
 
             for (var key in obj) {
-                console.warn(key);
+                var func = function (k, o, m) {
+                    _this.listenTo(m, 'change:' + k, function () {
+                        var html;
+                        console.warn(k + 'Associate', k + 'Associate' in this);
+                        if (k + 'Associate' in this) {
+                            this[k + 'Associate'](m);
+                        } else {
+                            html = m.get(k);
+                            this.$('[data-model =' + o[k] + ']').html(html);
+                        }
 
-                var func =function (m, v, o) {
-                        var _key= _.clone(key);
-                        console.warn('model was changed', _key, m, v, o);
-                        //var html;
-                        //if (key + 'AttrPreparing' in this) {
-                        //    html = this[key + 'AttrPreparing'](model.get(key));
-                        //} else {
-                        //    html = model.get(key);
-                        //}
-                        ////console.warn('[data-model =' + obj[key] + ']', $('[data-model =' + obj[key] + ']').html());
-                        //this.$('[data-model =' + obj[key] + ']').html(html);
-                    };
-                this.listenTo(model, 'change:' + key, func);
-
-
-                //this.listenTo(model, 'change:' + key, function (m, v, o) {
-                //    var _key= _.clone(key);
-                //    console.warn('model was changed', _key, m, v, o);
-                //    var html;
-                //    if (key + 'AttrPreparing' in this) {
-                //        html = this[key + 'AttrPreparing'](model.get(key));
-                //    } else {
-                //        html = model.get(key);
-                //    }
-                //    //console.warn('[data-model =' + obj[key] + ']', $('[data-model =' + obj[key] + ']').html());
-                //    this.$('[data-model =' + obj[key] + ']').html(html);
-                //});
-                //console.warn('key2',key);
-                //console.warn('model', model._events)
+                    })
+                }(key, obj, model);
             }
-
-
         }
     });
 

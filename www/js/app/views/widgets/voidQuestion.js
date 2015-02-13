@@ -6,16 +6,14 @@ define(['widget', 'models/question', "text!templates/widgets/voidQuestion.html!s
             initialize: function () {
                 this.model = new QuestionModel;
                 //this.model.getVoidQuestion();
-                //console.warn(this.model.attributes);
             },
             afterRender: function () {
                 this.associateModel(this.model, {text: 'text', answer: 'answer', explanations: 'explanations'});
-                //setTimeout(this.model.getVoidQuestion, 3000);
                 this.model.getVoidQuestion();
             },
-            answerAttributePreparing: function (attribute) {
-                console.warn('answerAttributePreparing')
-                return attribute.main;
+            answerAssociate: function (model) {
+                this.$('[data-model =answer]').html(model.get('answer').main);
+                this.$('[data-model =other]').html(model.get('answer').other.join(','));
             },
         });
         return VoidQuestion;
