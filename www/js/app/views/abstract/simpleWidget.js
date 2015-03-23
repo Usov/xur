@@ -40,6 +40,7 @@ define(['backbone'], function (Backbone) {
          * Метод собственной отрисовки виджета.
          */
         selfRender: function () {
+            this.model = this.model || {};
             var model = this.model instanceof Backbone.Model ? this.model.toJSON() : this.model;
             _.extend(model, {view: this.viewParam});
             $(this.el).html(this.template(model));
@@ -89,9 +90,6 @@ define(['backbone'], function (Backbone) {
                 obj = attributes;
             }
 
-
-            var eventObj = {};
-
             for (var key in obj) {
                 var func = function (k, o, m) {
                     _this.listenTo(m, 'change:' + k, function () {
@@ -103,7 +101,6 @@ define(['backbone'], function (Backbone) {
                             html = m.get(k);
                             this.$('[data-model =' + o[k] + ']').html(html);
                         }
-
                     })
                 }(key, obj, model);
             }

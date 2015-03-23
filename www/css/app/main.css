@@ -140,7 +140,7 @@ html, body {
 
 .b-container {
     margin-left: 36px;
-    margin-top: 20px;
+    margin-right: 36px;
     display: block;
     position: relative;
     overflow: hidden;
@@ -164,6 +164,23 @@ html, body {
 
 .b-void-header {
     font-size: 20px;
+}
+
+.b-void-controls {
+    float: right;
+    margin-top: 20px;
+    position: absolute;
+    left: 400px;
+    top: 38px;
+}
+
+.b-void-marks {
+
+}
+
+.b-void-marks-column {
+    float: left;
+    margin-right: 10px;
 }
 
 .b-create-question__left {
